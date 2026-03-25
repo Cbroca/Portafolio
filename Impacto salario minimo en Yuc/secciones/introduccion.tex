@@ -1,0 +1,38 @@
+\section{Introducción}
+
+El mercado laboral de Yucatán presenta una dualidad 
+estructural característica del sureste mexicano: un 
+sector industrial y de servicios en expansión 
+coexistiendo con una tasa de informalidad laboral que, 
+al cierre del cuarto trimestre de 2024, alcanzó el 
+58.1\%\footnote{Dato obtenido de los Indicadores Estratégicos 
+de la Encuesta Nacional de Ocupación y Empleo (ENOE), INEGI (2024).}. 
+En este contexto, la política de incrementos sustanciales
+al salario mínimo real, iniciada en 2019, plantea 
+un dilema econométrico relevante.
+
+\subsection{Planteamiento del Problema}
+La hipótesis central de este análisis 
+sugiere que el incremento del salario mínimo 
+no necesariamente genera un despido masivo de 
+trabajadores actuales (ajuste de stock), sino 
+que altera la probabilidad de que los nuevos 
+buscadores de empleo logren insertarse en el 
+sector formal (ajuste de flujo). Se postula que:
+
+\begin{equation}
+P(\text{Informal}_i) = f(SM_t, Z_i, \epsilon_i)
+\end{equation}
+
+Donde la probabilidad de que un individuo $i$ sea informal 
+depende del nivel del salario mínimo real ($SM_t$), de un 
+vector de características sociodemográficas ($Z_i$) ---como edad 
+y escolaridad--- y de un término de error ($\epsilon_i$), el 
+cual captura los factores no observados y la naturaleza estocástica 
+del comportamiento humano en el mercado laboral.
+
+\subsection{Objetivos}
+\begin{itemize}
+    \item \textbf{General:} Evaluar el impacto de los incrementos al salario mínimo en la probabilidad de acceso al empleo formal en Yucatán a partir de microdatos de la ENOE.
+    \item \textbf{Específico:} Identificar si los jóvenes y trabajadores con menor escolaridad presentan una mayor vulnerabilidad de desplazamiento hacia la informalidad tras los ajustes salariales.
+\end{itemize}

@@ -1,0 +1,22 @@
+\section{Metodología y Datos}
+
+En este capítulo se describe el proceso de 
+obtención, limpieza y tratamiento de los datos, así como la especificación del modelo econométrico utilizado para testear la hipótesis de la barrera de entrada al mercado laboral formal en Yucatán.
+
+\subsection{Fuente de Información: La ENOE}
+La fuente principal de este estudio son los microdatos de la \textbf{Encuesta Nacional de Ocupación y Empleo (ENOE)} del INEGI. A diferencia de los datos agregados, los microdatos permiten analizar las características individuales (edad, educación, posición en la ocupación) de cada encuestado en el estado de Yucatán.
+
+\subsection{Universo de Estudio y Filtrado de Datos}
+Para asegurar la validez de los resultados, se aplicaron los siguientes criterios de selección en el procesamiento de la base de datos:
+\begin{itemize}
+    \item \textbf{Delimitación Geográfica:} Se filtró la variable \texttt{ENT} (Entidad) con el código \textbf{31}, correspondiente exclusivamente al estado de Yucatán.
+    \item \textbf{Rango de Edad:} Se seleccionó a individuos entre 18 y 65 años, eliminando el sesgo de la población infantil o jubilada.
+    \item \textbf{Periodo Temporal:} Se analizan dos momentos de contraste: el cuarto trimestre de 2018 ($T_0$) como línea base, y el cuarto trimestre de 2024 ($T_1$) como periodo de consolidación salarial.
+\end{itemize}
+
+\subsection{Identificación de la Informalidad}
+Siguiendo la metodología de la TIL1 (Tasa de Informalidad Laboral), se construyó una variable dicotómica ($Y_i$) donde:
+\begin{itemize}
+    \item $Y_i = 1$ (Informal): Si el trabajador labora en una unidad económica no registrada o carece de prestaciones de seguridad social (IMSS/ISSSTE) derivadas de su relación laboral.
+    \item $Y_i = 0$ (Formal): Si el trabajador cuenta con registro ante instituciones de seguridad social y labora en unidades económicas constituidas.
+\end{itemize}

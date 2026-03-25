@@ -1,0 +1,45 @@
+\documentclass[12pt, letterpaper]{report}
+
+% --- Preámbulo: Paquetes esenciales ---
+\usepackage[utf8]{inputenc}    % Codificación
+\usepackage[spanish]{babel}    % Idioma
+\usepackage{amsmath, amssymb}  % Matemáticas avanzadas
+\usepackage{booktabs}          % Tablas elegantes (estilo econométrico)
+\usepackage{graphicx}          % Inclusión de gráficos
+\usepackage{geometry}          % Márgenes
+\geometry{margin=1in}
+
+% --- Bibliografía ---
+\usepackage[authoryear]{natbib}
+\bibliographystyle{apalike}
+
+\title{Barreras de Entrada en el Mercado Laboral Formal: Impacto del Salario Minimo
+en la Composición Laboral de Yucatán (2019 -- 2025)}
+\author{Carlos V. Broca}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+% --- Cuerpo del documento (Modular) ---
+\chapter{Introducción}
+\input{secciones/introduccion}
+
+\chapter{Marco Teórico}
+\input{secciones/mTeorico}
+
+\chapter{Metodología y Datos}
+\input{secciones/metodologia}
+
+\chapter{Resultados}
+%\input{secciones/resultados}
+
+% --- Bibliografía ---
+\bibliography{referencias}
+
+\end{document}
+
+\bibliographystyle{apalike} % Define el estilo de la cita (APA es el estándar)
+\bibliography{referencias}  % Llama a tu archivo referencias.bib (sin el .bib)
