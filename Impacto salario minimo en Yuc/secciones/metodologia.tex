@@ -7,11 +7,16 @@ obtención, limpieza y tratamiento de los datos, así como la especificación de
 La fuente principal de este estudio son los microdatos de la \textbf{Encuesta Nacional de Ocupación y Empleo (ENOE)} del INEGI. A diferencia de los datos agregados, los microdatos permiten analizar las características individuales (edad, educación, posición en la ocupación) de cada encuestado en el estado de Yucatán.
 
 \subsection{Universo de Estudio y Filtrado de Datos}
-Para asegurar la validez de los resultados, se aplicaron los siguientes criterios de selección en el procesamiento de la base de datos:
+Para asegurar la validez de los resultados y la comparabilidad de las muestras, se aplicaron los siguientes criterios de selección en el procesamiento de la base de datos:
+
 \begin{itemize}
     \item \textbf{Delimitación Geográfica:} Se filtró la variable \texttt{ENT} (Entidad) con el código \textbf{31}, correspondiente exclusivamente al estado de Yucatán.
-    \item \textbf{Rango de Edad:} Se seleccionó a individuos entre 18 y 65 años, eliminando el sesgo de la población infantil o jubilada.
-    \item \textbf{Periodo Temporal:} Se analizan dos momentos de contraste: el cuarto trimestre de 2018 ($T_0$) como línea base, y el cuarto trimestre de 2024 ($T_1$) como periodo de consolidación salarial.
+    \item \textbf{Rango de Edad:} Se seleccionó a individuos entre 18 y 65 años, eliminando el sesgo de la población infantil o jubilada que no participa plenamente en el mercado laboral formal.
+    \item \textbf{Temporalidad y Contraste:} Aunque el estudio analiza la política salarial del periodo 2019-2025, se seleccionan dos momentos estratégicos para aislar el efecto:
+    \begin{itemize}
+        \item \textit{Línea Base (4T-2018):} Funciona como el escenario previo ($T_0$) a la implementación de los incrementos sustanciales al salario mínimo.
+        \item \textit{Periodo de Consolidación (4T-2024):} Funciona como el escenario de comparación ($T_1$) para observar los efectos acumulados tras seis años de ajustes nominales.
+    \end{itemize}
 \end{itemize}
 
 \subsection{Identificación de la Informalidad}
@@ -20,3 +25,25 @@ Siguiendo la metodología de la TIL1 (Tasa de Informalidad Laboral), se construy
     \item $Y_i = 1$ (Informal): Si el trabajador labora en una unidad económica no registrada o carece de prestaciones de seguridad social (IMSS/ISSSTE) derivadas de su relación laboral.
     \item $Y_i = 0$ (Formal): Si el trabajador cuenta con registro ante instituciones de seguridad social y labora en unidades económicas constituidas.
 \end{itemize}
+
+\subsection{Especificación del Modelo Econométrico}
+Para estimar la probabilidad de que un trabajador en Yucatán se encuentre en la informalidad ante cambios en el salario mínimo real, se especifica un modelo de respuesta binaria tipo \textit{Probit}:
+
+\begin{equation}
+    P(Y_i = 1 | X_i) = \Phi(\beta_0 + \beta_1 \cdot SM_t + \sum \delta_j \cdot Z_{ji} + \epsilon_i)
+\end{equation}
+
+Donde:
+\begin{itemize}
+    \item $P(Y_i = 1)$ es la probabilidad de que el individuo $i$ sea informal.
+    \item $\Phi$ es la función de distribución acumulada de la normal estándar.
+    \item $SM_t$ es nuestra variable de interés (Salario Mínimo en el tiempo $t$).
+    \item $Z_{ji}$ representa el vector de variables de control (Edad, Sexo, Educación).
+    \item $\epsilon_i$ es el término de error.
+\end{itemize}
+
+\begin{quote}
+    \textit{\textbf{Nota interpretativa:}} A diferencia de una regresión lineal tradicional (donde el resultado puede ser cualquier número), el modelo \textit{Probit} se utiliza aquí porque la informalidad es una variable de "todo o nada" (o se es formal, o no se es). 
+
+    Intuitivamente, el modelo no predice cuánta informalidad hay, sino qué tan probable es que un trabajador promedio en Yucatán —dadas sus características de edad y educación— termine en el sector informal tras un aumento al salario mínimo. Al utilizar una distribución normal, el modelo asegura que los resultados siempre se mantengan en un rango lógico de probabilidad entre 0\% y 100\%.
+\end{quote}
