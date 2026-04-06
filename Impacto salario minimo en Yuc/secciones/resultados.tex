@@ -1,0 +1,47 @@
+\section{Análisis de Resultados}
+
+\subsection{Evolución de la Tasa de Informalidad en Yucatán}
+A partir del procesamiento de los microdatos de la Encuesta Nacional de Ocupación y Empleo (ENOE), se observa una trayectoria descendente en la incidencia de la informalidad laboral en el estado de Yucatán. En el cuarto trimestre de 2018 (4T-2018), la tasa de informalidad ponderada se ubicó en un \textbf{65.77\%}, mientras que para el mismo periodo de 2024 (4T-2024), el indicador registró un descenso situándose en el \textbf{60.06\%}. 
+
+Si bien esta reducción de 5.71 puntos porcentuales sugiere una mejora en la formalización del mercado laboral yucateco, el análisis econométrico permite identificar cambios estructurales en los mecanismos que determinan el acceso a la seguridad social en la entidad.
+
+\subsection{Determinantes de la Informalidad: Comparativa Logit 2018-2024}
+Para profundizar en la naturaleza de la informalidad, se estimaron dos modelos de regresión logística (Logit) ponderados por los factores de expansión correspondientes. Los resultados detallados se presentan en la Tabla \ref{tab:modelos_comparativos}.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Determinantes de la Probabilidad de Informalidad en Yucatán (2018 vs. 2024)}
+  \label{tab:modelos_comparativos}
+    \begin{tabular}{lcc}
+    \toprule
+    \textbf{Variables Independientes} & \textbf{Modelo 2018} & \textbf{Modelo 2024} \\
+    \midrule
+    Intercepto (Constante) & 10.482*** & 12.384*** \\
+    Logaritmo del Ingreso ($\log\_ingocup$) & -1.031*** & -1.169*** \\
+    Edad (Años cumplidos) & -0.0006 (n.s.) & -0.003 (n.s.) \\
+    Educación: Secundaria (Nivel 2) & -0.178 (n.s.) & -0.513* \\
+    Educación: Media Superior (Nivel 3) & -1.027*** & -1.193*** \\
+    Educación: Profesional (Nivel 4) & -1.657*** & -1.614*** \\
+    Educación: Posgrado (Nivel 5) & 0.457 (n.s.) & -1.728* \\
+    \midrule
+    \textbf{Estadísticos de la Base} & & \\
+    Tasa de Informalidad (Yucatán) & 65.77\% & 60.06\% \\
+    Log-Likelihood (Deviance Residual) & 4271.8 & 4631.9 \\
+    Observaciones (Muestra $n$) & 4,024 & 4,142 \\
+    \bottomrule
+    \multicolumn{3}{l}{\small Significancia: *** $p<0.01$; ** $p<0.05$; * $p<0.1$; n.s. = No significativo.} \\
+    \multicolumn{3}{l}{\small Fuente: Elaboración propia con microdatos de la ENOE (INEGI, 2018, 2024).}
+    \end{tabular}
+\end{table}
+
+\subsection{Interpretación Económica de los Hallazgos}
+
+\begin{itemize}
+    \item \textbf{Intensificación de la barrera de ingresos:} El coeficiente del logaritmo del ingreso presentó un incremento en su magnitud negativa, pasando de -1.03 a -1.16. Este hallazgo es fundamental para la investigación, pues sugiere que en el Yucatán actual, el nivel de ingreso es un filtro más severo para acceder a la formalidad de lo que era en el periodo prepandemia. Una mayor sensibilidad al ingreso implica que la informalidad se ha concentrado en los estratos salariales más bajos.
+    
+    \item \textbf{Estabilidad del escudo educativo:} La educación profesional se mantiene como el factor protector más sólido contra la precariedad laboral. Con coeficientes superiores a -1.6 en ambos periodos, se demuestra que la posesión de un título universitario reduce drásticamente la probabilidad de ser informal, independientemente del ciclo económico.
+    
+    \item \textbf{Pérdida de relevancia de la experiencia:} La variable edad no resultó significativa en ninguno de los dos modelos. Esto indica que, en el mercado laboral yucateco, la experiencia acumulada por el simple paso del tiempo no constituye una garantía de acceso a la seguridad social si no se acompaña de una mejora en las habilidades educativas o el nivel de ingresos.
+    
+\end{itemize}
+
